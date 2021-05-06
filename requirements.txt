@@ -1,0 +1,2 @@
+dearpygui
+cx_Freeze
