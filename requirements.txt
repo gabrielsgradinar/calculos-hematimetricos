@@ -1,3 +1,0 @@
-dearpygui
-wheel
-cx_Freeze

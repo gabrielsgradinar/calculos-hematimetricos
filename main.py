@@ -1,27 +1,25 @@
-from dearpygui.core import *
-from dearpygui.simple import *
+import dearpygui.dearpygui as dpg
 
 
 def print_me(sender, data):
-    log_debug(f"Menu Item: {sender}")
+    print(f"Menu Item: {sender}")
+
+with dpg.window(label="Calcúlos Hematimétricos", id="main_window"):
+
+    with dpg.menu_bar():
+
+        with dpg.menu(label="Calcúlos"):
+
+            dpg.add_menu_item(label="VCM", callback=print_me)
+            dpg.add_menu_item(label="HCM", callback=print_me)
+            dpg.add_menu_item(label="CHCM", callback=print_me)
+
+        with dpg.menu(label="Sobre"):
+
+            dpg.add_menu_item(label="Objetivo", callback=print_me)
+            dpg.add_menu_item(label="Quem somos", callback=print_me)
+            dpg.add_menu_item(label="Referências", callback=print_me)
 
 
-show_logger()
-
-with window("Calcúlos Hematimétricos"):
-
-    with menu_bar("Menu"):
-
-        with menu("Calcúlos"):
-
-            add_menu_item("VCM", callback=print_me)
-            add_menu_item("HCM", callback=print_me)
-            add_menu_item("CHCM", callback=print_me)
-
-        with menu("Sobre"):
-
-            add_menu_item("Objetivo", callback=print_me)
-            add_menu_item("Quem somos", callback=print_me)
-            add_menu_item("Referências", callback=print_me)
-
-start_dearpygui()
+dpg.set_primary_window("main_window", True)
+dpg.start_dearpygui()

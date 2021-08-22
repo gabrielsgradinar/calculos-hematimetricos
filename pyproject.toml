@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "calculos-hematimetricos"
+version = "0.1.0"
+description = ""
+authors = ["Gabriel Gradinar <gabrielgradinar@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+dearpygui = "^0.8.64"
+cx-Freeze = "^6.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
