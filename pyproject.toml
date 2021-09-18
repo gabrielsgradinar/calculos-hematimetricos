@@ -6,8 +6,8 @@ authors = ["Gabriel Gradinar <gabrielgradinar@hotmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-dearpygui = "^0.8.64"
 cx-Freeze = "^6.7"
+pygubu-designer = "^0.19"
 
 [tool.poetry.dev-dependencies]
 
