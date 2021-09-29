@@ -18,37 +18,37 @@ class MainPage(tk.Frame):
         vcm = ttk.Button(
             self, 
             text ="VCM",
-            command = lambda : controller.show_frame(Page1)
+            command = lambda : controller.show_frame(VCM)
         )
 
         hcm = ttk.Button(
             self, 
             text ="HCM",
-            command = lambda : controller.show_frame(Page2)
+            command = lambda : controller.show_frame(HCM)
         )
 
         chcm = ttk.Button(
             self, 
             text ="CHCM",
-            command = lambda : controller.show_frame(Page2)
+            command = lambda : controller.show_frame(HCM)
         )
 
         objetivo = ttk.Button(
             self, 
             text ="Objetivo",
-            command = lambda : controller.show_frame(Page2)
+            command = lambda : controller.show_frame(HCM)
         )
 
         quem_somos = ttk.Button(
             self, 
             text ="Quem somoss",
-            command = lambda : controller.show_frame(Page2)
+            command = lambda : controller.show_frame(HCM)
         )
 
         referencias = ttk.Button(
             self, 
             text ="Referências",
-            command = lambda : controller.show_frame(Page2)
+            command = lambda : controller.show_frame(HCM)
         )
 
 
@@ -62,51 +62,49 @@ class MainPage(tk.Frame):
         objetivo.grid(row = 3, column = 0, padx = 10, pady = 10)
         quem_somos.grid(row = 3, column = 1, padx = 10, pady = 10)
         referencias.grid(row = 3, column = 2, padx = 10, pady = 10)
-  
-          
-  
-  
-# second window frame page1
-class Page1(tk.Frame):
+
+
+class VCM(tk.LabelFrame):
      
     def __init__(self, parent, controller):
          
-        tk.Frame.__init__(self, parent)
-        label = ttk.Label(self, text ="Page 1", font = LARGEFONT)
-        label.grid(row = 0, column = 4, padx = 10, pady = 10)
-  
-        # button to show frame 2 with text
-        # layout2
-        button1 = ttk.Button(self, text ="StartPage",
-                            command = lambda : controller.show_frame(MainPage))
+        tk.LabelFrame.__init__(self, parent, text="VCM")
+
+
+        label = ttk.Label(self, text ="Dados explicativos sobre o VCM", font = LARGEFONT)
+        atalhos = ttk.Label(self, text ="Textos asdasdasdasdad", font = LARGEFONT)
+
+        button1 = ttk.Button(
+            self, 
+            text ="Menu Principal",
+            command = lambda : controller.show_frame(MainPage)
+        )
      
-        # putting the button in its place
-        # by using grid
-        button1.grid(row = 1, column = 1, padx = 10, pady = 10)
-  
-        # button to show frame 2 with text
-        # layout2
-        button2 = ttk.Button(self, text ="Page 2",
-                            command = lambda : controller.show_frame(Page2))
-     
-        # putting the button in its place by
-        # using grid
-        button2.grid(row = 2, column = 1, padx = 10, pady = 10)
+        button2 = ttk.Button(
+            self, 
+            text ="Page 2",
+            command = lambda : controller.show_frame(HCM)
+        )
+
+        label.grid(row = 0, column = 0, columnspan=3, rowspan=4, padx = 10, pady = 10)
+        atalhos.grid(row = 0, column = 4, padx = 10, rowspan=3, pady = 10)
+        button1.grid(row = 5, column = 0, padx = 10, pady = 10)
+        button2.grid(row = 6, column = 0, padx = 10, pady = 10)
   
   
   
   
 # third window frame page2
-class Page2(tk.Frame):
+class HCM(tk.LabelFrame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label = ttk.Label(self, text ="Page 2", font = LARGEFONT)
+        tk.LabelFrame.__init__(self, parent, text='HCM')
+        label = ttk.Label(self, text ="HCM", font = LARGEFONT)
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
   
         # button to show frame 2 with text
         # layout2
-        button1 = ttk.Button(self, text ="Page 1",
-                            command = lambda : controller.show_frame(Page1))
+        button1 = ttk.Button(self, text ="VCM",
+                            command = lambda : controller.show_frame(VCM))
      
         # putting the button in its place by
         # using grid
@@ -114,7 +112,7 @@ class Page2(tk.Frame):
   
         # button to show frame 3 with text
         # layout3
-        button2 = ttk.Button(self, text ="Startpage",
+        button2 = ttk.Button(self, text ="Menu Principal",
                             command = lambda : controller.show_frame(MainPage))
      
         # putting the button in its place by
