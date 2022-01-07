@@ -1,6 +1,8 @@
+import 'package:calculos_hematimetricos/pages/pageViews/chcm_page.dart';
+import 'package:calculos_hematimetricos/pages/pageViews/hcm_page.dart';
 import 'package:flutter/material.dart';
 
-import 'pageViews/one_page.dart';
+import 'pageViews/vcm_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,46 +23,60 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
-              accountName: Text("Gabriel"),
-              accountEmail: Text("gabriel@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.lightGreen,
-                child: Text('G'),
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(
+                'Bem vindo !',
+                style: TextStyle(fontSize: 24, color: Colors.white),
               ),
             ),
-            ListTile(
-              onTap: () {
-                _pageController.jumpToPage(0);
-                Navigator.pop(context);
-                setState(() {
-                  indexBottomNavigationBar = 0;
-                });
-              },
-              title: Text("Item 1"),
-              trailing: Icon(Icons.arrow_forward),
+            ExpansionTile(
+              title: Text("Calculos"),
+              children: [
+                ListTile(
+                  onTap: () {
+                    _pageController.jumpToPage(0);
+                    Navigator.pop(context);
+                  },
+                  title: Text("VCM"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  onTap: () {
+                    _pageController.jumpToPage(1);
+                    Navigator.pop(context);
+                  },
+                  title: Text("HCM"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  onTap: () {
+                    _pageController.jumpToPage(2);
+                    Navigator.pop(context);
+                  },
+                  title: Text("CHCM"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+              ],
             ),
-            ListTile(
-              onTap: () {
-                _pageController.jumpToPage(1);
-                Navigator.pop(context);
-                setState(() {
-                  indexBottomNavigationBar = 1;
-                });
-              },
-              title: Text("Item 2"),
-              trailing: Icon(Icons.arrow_forward),
-            ),
-            ListTile(
-              onTap: () {
-                _pageController.jumpToPage(2);
-                Navigator.pop(context);
-                setState(() {
-                  indexBottomNavigationBar = 2;
-                });
-              },
-              title: Text("Item 3"),
-              trailing: Icon(Icons.arrow_forward),
+            ExpansionTile(
+              title: Text("Informações"),
+              children: [
+                ListTile(
+                  title: Text("Objetivo"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  title: Text("Quem somos"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+                ListTile(
+                  title: Text("Referências"),
+                  trailing: Icon(Icons.arrow_forward),
+                ),
+              ],
             ),
           ],
         ),
@@ -68,36 +84,9 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: _pageController,
         children: [
-          OnePage(),
-          Container(color: Colors.red),
-          Container(color: Colors.yellow)
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: indexBottomNavigationBar,
-        onTap: (int page) {
-          setState(() {
-            indexBottomNavigationBar = page;
-          });
-          _pageController.animateToPage(
-            page,
-            duration: Duration(milliseconds: 300),
-            curve: Curves.ease,
-          );
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.access_alarms),
-            label: "Item 1",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.access_alarms),
-            label: "Item 2",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.access_alarms),
-            label: "Item 3",
-          ),
+          VcmPage(),
+          HcmPage(),
+          ChcmPage(),
         ],
       ),
     );

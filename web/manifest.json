@@ -1,6 +1,6 @@
 {
-    "name": "exemplo",
-    "short_name": "exemplo",
+    "name": "calculos_hematimetricos",
+    "short_name": "calculos_hematimetricos",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

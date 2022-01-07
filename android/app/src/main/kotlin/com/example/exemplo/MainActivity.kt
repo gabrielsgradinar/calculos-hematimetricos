@@ -1,4 +1,4 @@
-package com.example.exemplo
+package com.example.calculos_hematimetricos
 
 import io.flutter.embedding.android.FlutterActivity
 
