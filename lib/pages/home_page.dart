@@ -1,8 +1,7 @@
-import 'package:calculos_hematimetricos/pages/pageViews/chcm_page.dart';
-import 'package:calculos_hematimetricos/pages/pageViews/hcm_page.dart';
+import 'package:calculos_hematimetricos/pages/pageCalculations/chcm_page.dart';
+import 'package:calculos_hematimetricos/pages/pageCalculations/hcm_page.dart';
+import 'package:calculos_hematimetricos/pages/pageCalculations/vcm_page.dart';
 import 'package:flutter/material.dart';
-
-import 'pageViews/vcm_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -27,9 +26,11 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text(
-                'Bem vindo !',
-                style: TextStyle(fontSize: 24, color: Colors.white),
+              child: Center(
+                child: Text(
+                  'Bem vindo !',
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
               ),
             ),
             ExpansionTile(
